@@ -1,0 +1,6 @@
+---
+
+- name: Instalando Docker
+  hosts: docker
+  roles:
+   - docker

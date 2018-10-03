@@ -1,0 +1,5 @@
+- name: instalando apache2 em distro debian
+  package:
+   name: {{apache_debian}}
+   state: present
+   

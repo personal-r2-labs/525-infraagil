@@ -1,0 +1,13 @@
+---
+# tasks file for apache
+
+- name: instalar apache no Debian
+  include: debian.yaml
+  when: ansible_os_family == "Debian"
+
+- name: instalar apache no Centos
+  include: centos.yaml
+  when: ansible_os_family == "RedHat"
+
+- name: copiar arquivo para web
+  include: web.yaml

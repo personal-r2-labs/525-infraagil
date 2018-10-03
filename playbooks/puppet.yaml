@@ -1,0 +1,7 @@
+---
+
+- name: Instalar e Configurar o Puppet
+  hosts: all
+  roles:
+   - puppet
+  

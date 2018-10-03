@@ -1,0 +1,38 @@
+---
+- name: instalando epel
+  hosts: automation
+  tasks:
+   - name: instalando epel
+     yum:
+      name: epel-release
+      state: present
+
+
+- name: criando usuarios e instalando pacotes 
+  hosts: all
+  vars:
+   - seunome: romulo
+  tasks:
+   - name: criando usuario developer
+     user:
+      name: developer
+      state: present
+     user:
+      name: devops
+      state: present
+     user:
+      name: "{{seunome}}"
+      state: present
+   - name: instalar pacotes
+     package:
+      name:
+       - vim
+       - htop
+       - sl
+       - cowsay
+      state: present
+      update_cache: yes
+     check_errors: yes 
+
+
+
